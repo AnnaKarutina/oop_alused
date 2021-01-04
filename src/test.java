@@ -1,7 +1,7 @@
 /*
- * Tingimuslauste kasutamise näide
+ * muutujad ja andmetüübid -  näide
  * autor - Anna Karutina
- * ülesanne 2.2
+ * ülesanne 1.4a
  * */
 
 import java.util.Scanner;
@@ -12,18 +12,22 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Palun sisesta punktide summa: ");
+        System.out.println("Sisestage ainepunktide arv: ");
         // salvestame kasutaja sisestatud väärtus
-        double punktid = sisend.nextDouble();
-        // kontroll
-        if (punktid >= 0 && punktid < 66) {
-            System.out.println("Vähem kui kandideerimiseks vajalik");
-        } else if (punktid >= 66 && punktid < 85) {
-            System.out.println("Kandideerimine vastuvõtule");
-        } else if (punktid >= 85 && punktid <= 100) {
-            System.out.println("Vastuvõtt tagatud");
-        } else if (punktid < 0 || punktid > 100) {
-            System.out.println("Vigane punktisumma");
-        }
+        int punktid = sisend.nextInt();
+        // selgitame kasutajale, mida tuleb sisestada
+        System.out.println("Sisestage nädalate arv: ");
+        // salvestame kasutaja sisestatud väärtus
+        int nadalad = sisend.nextInt();
+        // arvutamine
+        // selleks, et komaga asi tekkiks peaks olema mingi väärtus -
+        // kas ülemine või alumine double väärtuseks teisendatud
+        double tunnid = (double) (26 * punktid) / nadalad;
+        // nüüd ümmardame
+        double tunnidYmmardatud = Math.round(tunnid);
+        // nüüd lõikame komaosa
+        int tunnidTaisarvuna = (int) tunnidYmmardatud;
+        // väljastame
+        System.out.println(tunnidTaisarvuna);
     }
 }
