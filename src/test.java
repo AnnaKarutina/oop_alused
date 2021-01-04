@@ -1,7 +1,7 @@
 /*
  * muutujad ja andmetüübid -  näide
  * autor - Anna Karutina
- * ülesanne 1.4a
+ * ülesanne 2.3c
  * */
 
 import java.util.Scanner;
@@ -12,22 +12,29 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Sisestage ainepunktide arv: ");
+        System.out.println("Inimeste arv: ");
         // salvestame kasutaja sisestatud väärtus
-        int punktid = sisend.nextInt();
+        int inimesed = sisend.nextInt();
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Sisestage nädalate arv: ");
+        System.out.println("Kohtade arv: ");
         // salvestame kasutaja sisestatud väärtus
-        int nadalad = sisend.nextInt();
+        int kohad = sisend.nextInt();
         // arvutamine
-        // selleks, et komaga asi tekkiks peaks olema mingi väärtus -
-        // kas ülemine või alumine double väärtuseks teisendatud
-        double tunnid = (double) (26 * punktid) / nadalad;
-        // nüüd ümmardame
-        double tunnidYmmardatud = Math.round(tunnid);
-        // nüüd lõikame komaosa
-        int tunnidTaisarvuna = (int) tunnidYmmardatud;
+        // kuna nii inimesed kui ka kohad on täiearvud
+        // siis / operaator töötab sama moodi nagu // pythonis
+        int bussid = inimesed / kohad;
+        // % - jäägi leidmine
+        int viimasesBussis = inimesed % kohad;
         // väljastame
-        System.out.println(tunnidTaisarvuna);
+        if (viimasesBussis > 0) {
+            bussid++; // suurendame busside arv ühe võrra, ++ on sama, mis bussid += 1
+        } else {
+            // kui ei ole inimesi, kellele on vaja lisabuss tellida,
+            // siis vaatame, mitu inimest on viimases bussis
+            // need on sama palju, nagu kohti bussis, mis sai eelnevalt täidetud
+            viimasesBussis = kohad;
+        }
+        System.out.println("Busse vaja: " + bussid);
+        System.out.println("Viimases bussis inimesi: " + viimasesBussis);
     }
 }
