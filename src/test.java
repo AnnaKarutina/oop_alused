@@ -1,7 +1,7 @@
 /*
  * while tsükkel -  näide
  * autor - Anna Karutina
- * ülesanne 3.1
+ * ülesanne 3.3
  * */
 
 import java.util.Scanner;
@@ -16,12 +16,13 @@ public class test {
         // salvestame kasutaja sisestatud väärtus
         int taringuteArv = sisend.nextInt();
         // korduv tegevus
-        int taring = (int) Math.round(Math.random() * 6);
-        System.out.println(taring);
         // kontroll
-        while (taring != taringuteArv) {
-            taring = (int) Math.round(Math.random() * 6);
+        while (true) {
+            int taring = (int) Math.round(Math.random() * 6);
             System.out.println(taring);
+            if (taring == taringuteArv) {
+                break;
+            }
         }
     }
 }
