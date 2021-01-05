@@ -1,7 +1,7 @@
 /*
- * muutujad ja andmetüübid -  näide
+ * while tsükkel -  näide
  * autor - Anna Karutina
- * ülesanne 2.3c
+ * ülesanne 3.1
  * */
 
 import java.util.Scanner;
@@ -12,29 +12,17 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Inimeste arv: ");
+        System.out.println("Sisesta, mitu korda tuleb äratada: ");
         // salvestame kasutaja sisestatud väärtus
-        int inimesed = sisend.nextInt();
-        // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Kohtade arv: ");
-        // salvestame kasutaja sisestatud väärtus
-        int kohad = sisend.nextInt();
-        // arvutamine
-        // kuna nii inimesed kui ka kohad on täiearvud
-        // siis / operaator töötab sama moodi nagu // pythonis
-        int bussid = inimesed / kohad;
-        // % - jäägi leidmine
-        int viimasesBussis = inimesed % kohad;
-        // väljastame
-        if (viimasesBussis > 0) {
-            bussid++; // suurendame busside arv ühe võrra, ++ on sama, mis bussid += 1
-        } else {
-            // kui ei ole inimesi, kellele on vaja lisabuss tellida,
-            // siis vaatame, mitu inimest on viimases bussis
-            // need on sama palju, nagu kohti bussis, mis sai eelnevalt täidetud
-            viimasesBussis = kohad;
+        int mituKorda = sisend.nextInt();
+        // korduv tegevus
+        // defineerime tsükli juhtimismuutuja
+        int kord = 1;
+        // kontroll
+        while (kord <= mituKorda) {
+            System.out.println("Tõuse ja sära!");
+            // juhtimismuutuja väärtuse suurendamine
+            kord++; // sama, mis kord += 1
         }
-        System.out.println("Busse vaja: " + bussid);
-        System.out.println("Viimases bussis inimesi: " + viimasesBussis);
     }
 }
