@@ -12,17 +12,16 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Sisesta, mitu korda tuleb äratada: ");
+        System.out.println("Täringute arv: ");
         // salvestame kasutaja sisestatud väärtus
-        int mituKorda = sisend.nextInt();
+        int taringuteArv = sisend.nextInt();
         // korduv tegevus
-        // defineerime tsükli juhtimismuutuja
-        int kord = 1;
+        int taring = (int) Math.round(Math.random() * 6);
+        System.out.println(taring);
         // kontroll
-        while (kord <= mituKorda) {
-            System.out.println("Tõuse ja sära!");
-            // juhtimismuutuja väärtuse suurendamine
-            kord++; // sama, mis kord += 1
+        while (taring != taringuteArv) {
+            taring = (int) Math.round(Math.random() * 6);
+            System.out.println(taring);
         }
     }
 }
