@@ -1,20 +1,19 @@
 /*
  * massiivid -  näide
  * autor - Anna Karutina
- * ülesanne 6.2
+ * ülesanne 5.1
  * */
+
+import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        int[] numbrid = new int[10];
-        numbrid[0] = 1;
-        numbrid[1] = 2;
-        numbrid[2] = 3;
-        numbrid[3] = 4;
-        numbrid[4] = 5;
-        System.out.println(numbrid.length);
-        for (int i = 0; i < numbrid.length; i++) {
-            System.out.println(numbrid[i]);
-        }
+        int[] vastuvoetud = {2803, 2626, 2359, 1927, 2236, 2281, 2394, 2484, 2468};
+        Scanner sisend = new Scanner(System.in);
+        System.out.println("Sisesta aasta: ");
+        int aasta = sisend.nextInt();
+        int massiiviIndeks = aasta - 2011;
+        System.out.println("Vastuvõetud on " + vastuvoetud[massiiviIndeks]);
+
     }
 }
