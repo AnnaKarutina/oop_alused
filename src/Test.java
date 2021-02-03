@@ -1,21 +1,16 @@
 public class Test {
     public static void main(String[] args) {
-        Inimene mati = new Inimene("Mati");
-        mati.setPikkus(1.80);
-        mati.setMass(149.0);
-        System.out.println(mati.getNimi() + " on " + mati.getPikkus() + "m pikk ja kaalub " + mati.getMass() + " kg");
-        System.out.println("kmi = " + mati.kmi());
-        System.out.printf("kmi = %.2f\n", mati.kmi());
+        Auto auto1 = new Auto();
+        auto1.km = 100;
 
-        mati.suurendaKaal();
-        System.out.println(mati.getNimi() + " on " + mati.getPikkus() + "m pikk ja kaalub " + mati.getMass() + " kg");
+        System.out.println("Auto1 läbitud teekond = " + auto1.km);
 
-        mati.suurendaKaal(5.0);
-        System.out.println(mati.getNimi() + " on " + mati.getPikkus() + "m pikk ja kaalub " + mati.getMass() + " kg");
-        System.out.printf("kmi = %.2f\n", mati.kmi());
+        Auto auto2 = new Auto();
+        auto2.km = 85;
 
-        mati.normaalKaal();
-        System.out.println(mati.getNimi() + " on " + mati.getPikkus() + "m pikk ja kaalub " + mati.getMass() + " kg");
-        System.out.printf("kmi = %.2f\n", mati.kmi());
+        System.out.println("Auto1 läbitud teekond = " + auto1.km);
+        System.out.println("Auto2 läbitud teekond = " + auto2.km);
+
+        System.out.println(Auto.km);
     }
 }
