@@ -1,16 +1,19 @@
 public class Test {
     public static void main(String[] args) {
-        Auto auto1 = new Auto();
-        auto1.km = 100;
+        Sein seinPohi = new Sein("põhi sein");
+        Sein seinLouna = new Sein("lõuna sein");
+        Sein seinLaane = new Sein("lääne sein");
+        Sein seinIda = new Sein("ida sein");
 
-        System.out.println("Auto1 läbitud teekond = " + auto1.km);
+        Lagi lagi = new Lagi(2.5, "helesinine");
 
-        Auto auto2 = new Auto();
-        auto2.km = 85;
+        Voodi voodi = new Voodi("kahele", 2, 2, 1, 70);
 
-        System.out.println("Auto1 läbitud teekond = " + auto1.km);
-        System.out.println("Auto2 läbitud teekond = " + auto2.km);
+        Lamp lamp = new Lamp("Klassikaline", false);
 
-        System.out.println(Auto.km);
+        Magamistuba magamistuba = new Magamistuba("külaliste magamistuba", seinPohi, seinLouna, seinLaane, seinLouna, lagi, voodi, lamp);
+        magamistuba.valmistaVoodi();
+        magamistuba.valmistaLamp();
+        System.out.println(magamistuba.getLamp().isSisseLulitatud());
     }
 }
