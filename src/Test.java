@@ -1,19 +1,55 @@
+import java.util.ArrayList;
+
 public class Test {
     public static void main(String[] args) {
-        Sein seinPohi = new Sein("põhi sein");
-        Sein seinLouna = new Sein("lõuna sein");
-        Sein seinLaane = new Sein("lääne sein");
-        Sein seinIda = new Sein("ida sein");
+        // moodustame õpetatavate teemade nimekirja
+        ArrayList<String> teemad = new ArrayList<>();
+        teemad.add("OOP");
+        teemad.add("Pärilus");
+        teemad.add("Kapseldus");
+        teemad.add("Kompositsioon");
+        // loome õpetaja
+        Opetaja opetaja = new Opetaja("Anna");
 
-        Lagi lagi = new Lagi(2.5, "helesinine");
+        // Loome klass
+        ArrayList<Opilane> ita21 = new ArrayList<>();
+        Opilane mati = new Opilane("Mati");
+        Opilane kati = new Opilane("Kati");
+        ita21.add(mati);
+        ita21.add(kati);
 
-        Voodi voodi = new Voodi("kahele", 2, 2, 1, 70);
+        // Õpetaja õpetab oma õpilased
+        oppetoo(teemad, ita21, opetaja);
 
-        Lamp lamp = new Lamp("Klassikaline", false);
+        // teadmiste kontroll pärast aine lõpetamiset
+        teadmisteKontroll(ita21);
+        // ühe nädala pärast Mati unustab teemat Kapseldust
+        mati.unusta("Kapseldus");
+        // kontrollime uuesti teadmised
+        teadmisteKontroll(ita21);
+        // las Mati uuesti õpib kalselduse teemad
+        mati.opib("Kapseldus");
+        // kontrollime uuesti teadmised
+        teadmisteKontroll(ita21);
 
-        Magamistuba magamistuba = new Magamistuba("külaliste magamistuba", seinPohi, seinLouna, seinLaane, seinLouna, lagi, voodi, lamp);
-        magamistuba.valmistaVoodi();
-        magamistuba.valmistaLamp();
-        System.out.println(magamistuba.getLamp().isSisseLulitatud());
+
+    }
+
+    public static void teadmisteKontroll(ArrayList<Opilane> grupp) {
+        for (Opilane opilane : grupp) {
+            System.out.println("Opilane " + opilane.getNimi() + " teadmised:");
+            for (String teadmine : opilane.getTeadmised()) {
+                System.out.println(teadmine);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void oppetoo(ArrayList<String> teemad, ArrayList<Opilane> grupp, Opetaja opetaja) {
+        for (String teema : teemad) {
+            for (Opilane opilane : grupp) {
+                opetaja.opetab(opilane, teema);
+            }
+        }
     }
 }
